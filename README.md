@@ -41,3 +41,5 @@ class ZebraController < ApplicationController
   end
 end
 ```
+
+- @11.50 min
