@@ -1,13 +1,13 @@
 <body>
 
 
-<h2>We played rock!</h2>
+<h2>We played paper!</h2>
 
 <h2>They played <%=@random_move %>!</h2>
 
-<%if @random_move=="scissors"%>
+<%if @random_move=="rock"%>
   <h2> We won! </h2>
-<% elsif @random_move=="paper"%>
+<% elsif @random_move=="scissors"%>
   <h2> We lost! </h2>
 <% else %>
   <h2> We tied! </h2>

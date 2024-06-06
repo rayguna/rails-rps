@@ -41,5 +41,56 @@ class ZebraController < ApplicationController
   end
 end
 ```
+3. The main index page is defined as: get("/", {:controller => "zebra", :action => "rules"}) within config/routes.rb. Here is the complete code:
+```
+Rails.application.routes.draw do
+  get("/rock", {:controller => "zebra", :action => "play_rock"})
 
-- @11.50 min
+  get("/paper", {:controller => "zebra", :action => "play_paper"})
+
+  get("/scissors", {:controller => "zebra", :action => "play_scissors"})
+
+  get("/", {:controller => "zebra", :action => "rules"})
+end
+
+```
+
+4. Place the repetitive links to play rock, play paper, and play scissors within views/layouts/application.html.erb. Make sure to place <% yield %> below the <a href="..."></a>. <% yield%> renders the content of the unique pages. Here is the code:
+
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rails RPS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+
+  <body>
+
+    <div>
+      <a href="/rock">
+        Play Rock
+      </a>
+    </div>
+
+    <div>
+      <a href="/paper">
+        Play Paper
+      </a>
+    </div>
+
+    <div>
+      <a href="/scissors">
+        Play Scissors
+      </a>
+    </div>
+    <%= yield %>
+    <a href="/">
+      Rules
+    </a>
+
+  </body>
+</html>
+```
+5. When finished, exit the app by pressing ctrl + c in the terminal. Then, type in the terminal "rale grade" and enter the token.
