@@ -10,7 +10,7 @@ Notes:
 Here is how you set the routes in routes.rb. The :controller is the child class that is inherited from a built-in Ruby class and :action is the class method.
 
 ```
-#app/routes.rb
+#config/routes.rb
 
 Rails.application.routes.draw do
   get("/rock", {:controller => "zebra", :action => "giraffe"})
